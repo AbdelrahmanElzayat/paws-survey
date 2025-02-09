@@ -1,0 +1,44 @@
+{
+  "PartyFile": "Party File",
+  "AgendaCeremony": "Agenda Forum",
+  "Menu": "Menu",
+  "CeremonySurvey": "Forum Survey",
+  "AboutMuntajat": "About Muntajat",
+
+  "MuntajatAnnualTitle": "Muntajat Annual Event Survey",
+  "MuntajatAnnualDes": "We appreciate and valuable time in filling out the questionnaire to measure your feedback and suggestions regarding to ceremony 2025.",
+  "Sharek": "“Sharek”",
+
+  "rateHintOld": "Please rate by choosing options from 1 to 5, where option 1 means “Poor” and 5 means “Excellent”",
+  "rateHint": "Please rate the following questions using the scale from 1 to 5, where 1 means Acceptable; and 5 means Excellent",
+
+  "q1": "How satisfied are you with the time and venue of the Forum?",
+  "q2": "How satisfied are you with the Forum agenda?",
+  "q3": "What do you think about Muntajat platform updates?",
+  "q4": "What do you think about Ship Go updates?",
+  "note": "Do you have any comments or suggestions regarding the Forum?",
+  "noteHolder": "Write your notes here..",
+  "confirm": "Confirm",
+
+  "rateRequired": "Please rate this !",
+  "noteMax": "You can write a maximum of 500 characters",
+  "formSuccess": "Survey submitted successfully",
+  "formError": "Something went wrong !",
+
+  "business_elite_survey": "Paws&Partners Forum Survey",
+  "survey_appreciation": "We appreciate and value your precious time in filling out the survey to measure your opinions and suggestions regarding the Paws&Partners.",
+  "name": "Name",
+  "nameHolder": "Enter your name",
+  "phone": "Phone",
+  "phoneHolder": "Enter your phone number",
+  "company": "Company",
+  "companyHolder": "Enter your company name",
+  "nameRequired": "Name is required",
+  "phoneRequired": "Phone number is required",
+  "companyRequired": "Company is required",
+  "questionRate": "How do you evaluate the activity/activities in terms of the benefits gained?",
+  "questionRates": "How do you evaluate the activities in terms of the benefits gained?",
+  "rateMin": "please select number",
+  "thank_you_title": "Thank You!",
+  "thank_you_message": "Thank you for filling out the survey. We appreciate your time and effort."
+}
