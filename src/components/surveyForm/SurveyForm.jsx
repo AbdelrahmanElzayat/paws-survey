@@ -14,6 +14,8 @@ const SurveyForm = ({ questions, baseurl }) => {
   const [showRating, setShowRating] = useState(false);
   // const [title, setTitle] = useState(false);
 
+  const options = t("options", { returnObjects: true });
+
   const handleSelection = (key, value, isRadio) => {
     setSelectedValues((prev) => {
       if (isRadio) {
@@ -27,7 +29,10 @@ const SurveyForm = ({ questions, baseurl }) => {
         : [...selectedOptions, value];
 
       // التحكم في حالة showRating بناءً على الاختيارات
-      if (newOptions.includes("لم أحضر")) {
+      if (
+        newOptions.includes("لم أحضر") ||
+        newOptions.includes("Did not attend")
+      ) {
         setShowRating(false);
       } else {
         setShowRating(newOptions.length > 0);
@@ -192,34 +197,63 @@ const SurveyForm = ({ questions, baseurl }) => {
                     {lang === "ar" ? item.question : item.question_en}
                   </label>
                   <div className="flex flex-wrap justify-start gap-3 md:gap-4">
-                    {item?.options.map((value) => (
-                      <React.Fragment key={value}>
-                        <Field
-                          type={item.is_radio ? "radio" : "checkbox"}
-                          name={ratingKey}
-                          value={String(value)}
-                          className="hidden peer"
-                          id={`${ratingKey}-${value}`}
-                          onClick={() =>
-                            handleSelection(ratingKey, value, item.is_radio)
-                          }
-                        />
-                        <label
-                          htmlFor={`${ratingKey}-${value}`}
-                          className={`p-1 leading-7 md:min-w-12 md:min-h-12 min-w-8 min-h-8 flex items-center justify-center flex-wrap text-white cursor-pointer transition-all duration-200 ${
-                            Array.isArray(selectedValues[ratingKey])
-                              ? selectedValues[ratingKey].includes(value)
-                                ? "bg-[#BFA879]"
-                                : "bg-[rgba(161,255,230,0.20)]"
-                              : selectedValues[ratingKey] === value
-                              ? "bg-[#BFA879]"
-                              : "bg-[rgba(161,255,230,0.20)]"
-                          }`}
-                        >
-                          {value}
-                        </label>
-                      </React.Fragment>
-                    ))}
+                    {item.is_radio
+                      ? item?.options.map((value) => (
+                          <React.Fragment key={value}>
+                            <Field
+                              type={item.is_radio ? "radio" : "checkbox"}
+                              name={ratingKey}
+                              value={String(value)}
+                              className="hidden peer"
+                              id={`${ratingKey}-${value}`}
+                              onClick={() =>
+                                handleSelection(ratingKey, value, item.is_radio)
+                              }
+                            />
+                            <label
+                              htmlFor={`${ratingKey}-${value}`}
+                              className={`p-1 leading-7 md:min-w-12 md:min-h-12 min-w-8 min-h-8 flex items-center justify-center flex-wrap text-white cursor-pointer transition-all duration-200 ${
+                                Array.isArray(selectedValues[ratingKey])
+                                  ? selectedValues[ratingKey].includes(value)
+                                    ? "bg-[#BFA879]"
+                                    : "bg-[rgba(161,255,230,0.20)]"
+                                  : selectedValues[ratingKey] === value
+                                  ? "bg-[#BFA879]"
+                                  : "bg-[rgba(161,255,230,0.20)]"
+                              }`}
+                            >
+                              {value}
+                            </label>
+                          </React.Fragment>
+                        ))
+                      : options.map((value) => (
+                          <React.Fragment key={value}>
+                            <Field
+                              type={item.is_radio ? "radio" : "checkbox"}
+                              name={ratingKey}
+                              value={String(value)}
+                              className="hidden peer"
+                              id={`${ratingKey}-${value}`}
+                              onClick={() =>
+                                handleSelection(ratingKey, value, item.is_radio)
+                              }
+                            />
+                            <label
+                              htmlFor={`${ratingKey}-${value}`}
+                              className={`p-1 leading-7 md:min-w-12 md:min-h-12 min-w-8 min-h-8 flex items-center justify-center flex-wrap text-white cursor-pointer transition-all duration-200 ${
+                                Array.isArray(selectedValues[ratingKey])
+                                  ? selectedValues[ratingKey].includes(value)
+                                    ? "bg-[#BFA879]"
+                                    : "bg-[rgba(161,255,230,0.20)]"
+                                  : selectedValues[ratingKey] === value
+                                  ? "bg-[#BFA879]"
+                                  : "bg-[rgba(161,255,230,0.20)]"
+                              }`}
+                            >
+                              {value}
+                            </label>
+                          </React.Fragment>
+                        ))}
                   </div>
                   {errors[ratingKey] && touched[ratingKey] && (
                     <p className="text-red-500 text-sm mt-2">

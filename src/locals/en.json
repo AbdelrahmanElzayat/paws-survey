@@ -26,7 +26,7 @@
   "formError": "Something went wrong !",
 
   "business_elite_survey": "Paws&Partners Forum Survey",
-  "survey_appreciation": "We appreciate and value your precious time in filling out the survey to measure your opinions and suggestions regarding the Paws&Partners.",
+  "survey_appreciation": "We appreciate and value your precious time in filling out the survey to measure your suggestions regarding the Paws&Partners.",
   "name": "Name",
   "nameHolder": "Enter your name",
   "phone": "Phone",
@@ -40,5 +40,7 @@
   "questionRates": "How do you evaluate the activities in terms of the benefits gained?",
   "rateMin": "please select number",
   "thank_you_title": "Thank You!",
-  "thank_you_message": "Thank you for filling out the survey. We appreciate your time and effort."
+  "thank_you_message": "Thank you for filling out the survey. We appreciate your time and effort.",
+
+  "options": ["Lectures", "Courses", "Brand training sessions", "Did not attend"]
 }
